@@ -1,11 +1,14 @@
-const {getToken} = require("./getTokenController")
+const { getToken } = require("./getTokenController");
 
-const app_key = process.env.APP_KEY;
-const base_URL = process.env.BASE_URL;
+const dotenv = require("dotenv");
+dotenv.config();
+
+var app_key = process.env.APP_KEY;
+var base_URL = process.env.BASE_URL;
 
 const refundTransaction = async () => {
   try {
-    const {trxID, amount, paymentID, reason, sku} = req.body
+    const { trxID, amount, paymentID, reason, sku } = req.body;
     const token = await getToken();
     payload = {
       trxID,
@@ -29,4 +32,4 @@ const refundTransaction = async () => {
   }
 };
 
-module.exports = {refundTransaction}
+module.exports = { refundTransaction };

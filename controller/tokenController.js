@@ -2,7 +2,10 @@ const {axiosPost} = require("./postController")
 // const dotenv = require("dotenv")
 // dotenv.config()
 
-const base_URL = "https://tokenized.sandbox.bka.sh/v1.2.0-beta/tokenized/checkout";
+const dotenv = require("dotenv");
+dotenv.config();
+
+var base_URL = process.env.BASE_URL;
 
 const grantToken = async (username, password, app_key, app_secret) => {
   const payload = {

@@ -1,13 +1,11 @@
 const { getToken } = require("./getTokenController");
 const { axiosPost } = require("./postController");
-// const dotenv = require("dotenv");
-// dotenv.config();
+const dotenv = require("dotenv");
+dotenv.config();
 
-// var app_key = process.env.APP_KEY;
-// var base_URL = process.env.BASE_URL;
-const base_URL =
-  "https://tokenized.sandbox.bka.sh/v1.2.0-beta/tokenized/checkout";
-const app_key = "4f6o0cjiki2rfm34kfdadl1eqq";
+var app_key = process.env.APP_KEY;
+var base_URL = process.env.BASE_URL;
+
 
 const createPayment = async (req, res) => {
   try {
@@ -17,7 +15,7 @@ const createPayment = async (req, res) => {
 
     const payload = {
       mode: "0011",
-      payerReference: payerReference?? "01619777283",
+      payerReference: payerReference ?? "01619777283",
       callbackURL: callbackURL ?? "http://google.com",
       amount: amount,
       currency: "BDT",
@@ -33,7 +31,7 @@ const createPayment = async (req, res) => {
     //   status: true,
     //   message: data,
     // });
-    res.send(data)
+    res.send(data);
   } catch (error) {
     return error;
   }

@@ -18,6 +18,6 @@ const axiosPost = async (endPointURL, payload, headers) => {
   clearTimeout(timeOut);
   if (data.errorMessage) throw new Error(data.errorMessage);
   return data;
-}
+};
 
 module.exports = { axiosPost };

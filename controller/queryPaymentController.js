@@ -1,7 +1,10 @@
 const { getToken } = require("./getTokenController");
 
-const app_key = process.env.APP_KEY;
-const base_URL = process.env.BASE_URL;
+const dotenv = require("dotenv");
+dotenv.config();
+
+var app_key = process.env.APP_KEY;
+var base_URL = process.env.BASE_URL;
 
 const queryPayment = async (req, res) => {
   try {
@@ -16,7 +19,7 @@ const queryPayment = async (req, res) => {
     };
     const data = await post(`${base_URL}/payment/status`, payload, headers);
 
-    res.send(data)
+    res.send(data);
   } catch (error) {
     return error;
   }

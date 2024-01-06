@@ -19,7 +19,7 @@ const executePayment = async (req, res) => {
     //   status: 200,
     //   message: data,
     // });
-    res.send(data)
+    res.send(data);
   } catch (error) {
     return error;
   }

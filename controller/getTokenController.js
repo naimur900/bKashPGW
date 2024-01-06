@@ -2,9 +2,9 @@ const { grantToken, refreshToken } = require("./tokenController");
 const dotenv = require("dotenv");
 dotenv.config();
 const username = "sandboxTokenizedUser02";
-const password = "sandboxTokenizedUser02@12345";
-const app_key = "4f6o0cjiki2rfm34kfdadl1eqq";
-const app_secret = "2is7hdktrekvrbljjh44ll3d9l1dtjo4pasmjvs5vl5qr3fug4b";
+const password = process.env.PASSWORD;
+const app_key = process.env.APP_KEY;
+const app_secret = process.env.APP_SECRET;
 
 let token = "";
 let refToken = "";
